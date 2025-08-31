@@ -1,17 +1,76 @@
-{% extends "layout.html" %}
-{% block content %}
-  <div class="card shadow-sm">
-    <div class="card-body">
-      <h1 class="h4 mb-3">ようこそ</h1>
-      <p class="text-muted">TOEICリーディング対策アプリ（MVP）。下からトレーニングを始めましょう。</p>
-      <div class="d-flex gap-3 flex-wrap">
-        <a href="{{ url_for('quiz_part5') }}" class="btn btn-primary btn-lg">Part 5 を始める</a>
-        <a href="{{ url_for('quiz_part6') }}" class="btn btn-outline-primary btn-lg">Part 6 を始める</a>
-      </div>
-      <hr class="my-4">
-      <div class="small text-muted">
-        学習の正答数/正答率はブラウザのローカルに保存されます。成績は「成績リセット」ボタン、または設定で日次/セッションごとに自動リセットが可能です。
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- GitHub Pages（サブパス）用の base。repo 名に合わせてあります -->
+  <base href="/toeic-reading-app/">
+
+  <title>TOEICリーディング対策アプリ</title>
+
+  <!-- PWA / iOS 用 -->
+  <link rel="manifest" href="static/manifest.json">
+  <link rel="apple-touch-icon" href="static/icons/icon-192.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="theme-color" content="#0ea5e9">
+
+  <!-- 簡単な見た目（CDNなし・オフラインでも見えるように軽いCSSを内蔵） -->
+  <style>
+    :root { color-scheme: light dark; }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, "ヒラギノ角ゴ ProN", "游ゴシック", sans-serif; }
+    .container { max-width: 860px; margin: 32px auto; padding: 0 16px; }
+    .card { background: canvas; border: 1px solid color-mix(in oklab, CanvasText 15%, transparent); border-radius: 12px; }
+    .card-body { padding: 24px; }
+    h1 { margin: 0 0 8px; font-size: 1.5rem; }
+    p.text-muted { margin: 0 0 16px; opacity: .8; }
+    .gap-3 { gap: 12px; }
+    .flex { display: flex; flex-wrap: wrap; }
+    .btn { display: inline-block; padding: 12px 16px; border-radius: 10px; text-decoration: none; font-weight: 600; }
+    .btn-primary { background: #0ea5e9; color: #fff; }
+    .btn-outline-primary { color: #0ea5e9; border: 2px solid #0ea5e9; }
+    hr { border: 0; height: 1px; background: color-mix(in oklab, CanvasText 12%, transparent); margin: 20px 0; }
+    .small { font-size: .9rem; }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <div class="card">
+      <div class="card-body">
+        <h1>ようこそ</h1>
+        <p class="text-muted">TOEICリーディング対策アプリ（MVP）。下からトレーニングを始めましょう。</p>
+
+        <div class="flex gap-3">
+          <!-- Jinja の url_for は使えないので、静的パスに変更 -->
+          <a href="quiz/part5/" class="btn btn-primary">Part 5 を始める</a>
+          <a href="quiz/part6/" class="btn btn-outline-primary">Part 6 を始める</a>
+        </div>
+
+        <hr>
+        <div class="small text-muted">
+          学習の正答数/正答率はブラウザのローカルに保存されます。成績は「成績リセット」ボタン、または設定で日次/セッションごとに自動リセットが可能です。
+        </div>
       </div>
     </div>
-  </div>
-{% endblock %}
+  </main>
+
+  <!-- IndexedDB & コンテンツパック同期（相対パス版を使用） -->
+  <script src="static/idb.js"></script>
+  <script src="static/pack_loader.rel.js"></script>
+  <script>
+    (async () => {
+      try {
+        const res = await PackLoader.syncPacks(); // 初回に問題データをIDBへ同期
+        if (res.updated) console.log('Content updated');
+      } catch (e) {
+        console.warn('Pack sync failed (offline?)', e);
+      }
+      // PWA: Service Worker登録（docs/配下で動くように相対パス＆scope指定）
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('static/service-worker.pwa.js', { scope: './' })
+          .catch(console.error);
+      }
+    })();
+  </script>
+</body>
+</html>
