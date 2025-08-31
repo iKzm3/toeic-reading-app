@@ -1,0 +1,30 @@
+{
+  "manifest_version": 1,
+  "updated_at": "2025-08-31T12:12:53+0900",
+  "packs": [
+    {
+      "id": "part5_enja_v1",
+      "type": "part5",
+      "levels": [
+        "600",
+        "750"
+      ],
+      "entries": 20,
+      "file": "pack_part5_v1.jsonl",
+      "sha256": "fb889256992f6eda137cb83da885bdead12cca7e7ad0f0e8c6964b02ee48af98",
+      "size": 8745
+    },
+    {
+      "id": "part6_enja_v1",
+      "type": "part6",
+      "levels": [
+        "600",
+        "750"
+      ],
+      "entries": 3,
+      "file": "pack_part6_v1.jsonl",
+      "sha256": "eeca420910b627462157620751fa4503db451f1b3b67418fe6086a5b1579b799",
+      "size": 4694
+    }
+  ]
+}
