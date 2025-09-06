@@ -1,0 +1,57 @@
+[
+  {
+    "question": "The manager ______ the budget proposal last Friday.",
+    "choices": [
+      "reviewed",
+      "has reviewing",
+      "reviewing",
+      "review"
+    ],
+    "answer": 0,
+    "explanation": "last Friday → 過去形 reviewed。"
+  },
+  {
+    "question": "All staff must ______ the updated security guidelines.",
+    "choices": [
+      "comply",
+      "comply with",
+      "follow to",
+      "obey with"
+    ],
+    "answer": 1,
+    "explanation": "正しいコロケーションは comply with。"
+  },
+  {
+    "question": "Delivery will be delayed ______ the severe weather.",
+    "choices": [
+      "because",
+      "because of",
+      "due",
+      "despite of"
+    ],
+    "answer": 1,
+    "explanation": "名詞を取るのは because of。"
+  },
+  {
+    "question": "We are looking for a candidate with strong ______ skills.",
+    "choices": [
+      "communicate",
+      "communication",
+      "communicated",
+      "communicating"
+    ],
+    "answer": 1,
+    "explanation": "名詞が必要 → communication skills。"
+  },
+  {
+    "question": "A number of applicants ______ experience in customer support.",
+    "choices": [
+      "has",
+      "have",
+      "having",
+      "has had"
+    ],
+    "answer": 1,
+    "explanation": "A number of + 複数名詞 → 動詞は複数形 have。"
+  }
+]

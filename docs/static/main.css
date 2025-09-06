@@ -1,0 +1,3 @@
+:root { --brand: #0d6efd; }
+.btn-choice { text-align: left; }
+/* 余計な上書きは削除。Bootstrapのoutlineボタン色をそのまま使用して可読性を確保 */

@@ -1,0 +1,81 @@
+{
+  "items": [
+    {
+      "id": "p6_demo_12",
+      "title": "Renovation Notice",
+      "passage": "Our headquarters will undergo renovation next month. Work will begin on [1] and continue for three weeks. During this period, employees are asked to [2] from entering the lobby after 6 p.m. Maintenance staff will [3] the progress daily and [4] any changes on the intranet.",
+      "blanks": [
+        {
+          "num": 1,
+          "choices": {
+            "a": "Monday",
+            "b": "monthly",
+            "c": "recent",
+            "d": "quicker"
+          },
+          "answer": "a",
+          "tag": "NOUN",
+          "ja_choices": {
+            "a": "月曜日",
+            "b": "毎月",
+            "c": "最近",
+            "d": "より速く"
+          }
+        },
+        {
+          "num": 2,
+          "choices": {
+            "a": "proceed",
+            "b": "refrain",
+            "c": "engage",
+            "d": "replace"
+          },
+          "answer": "b",
+          "tag": "VERB_COLLOC",
+          "ja_choices": {
+            "a": "進める",
+            "b": "控える",
+            "c": "従事する",
+            "d": "取り替える"
+          }
+        },
+        {
+          "num": 3,
+          "choices": {
+            "a": "evaluate",
+            "b": "evaluation",
+            "c": "evaluated",
+            "d": "evaluator"
+          },
+          "answer": "a",
+          "tag": "WORD_FORM",
+          "ja_choices": {
+            "a": "評価する",
+            "b": "評価（名詞）",
+            "c": "評価された",
+            "d": "評価者"
+          }
+        },
+        {
+          "num": 4,
+          "kind": "sentence",
+          "choices": {
+            "a": "Please note that access cards may be temporarily disabled.",
+            "b": "The cafeteria offers seasonal desserts every Friday.",
+            "c": "Employees are welcome to decorate their desks for holidays.",
+            "d": "The company participates in local volunteer events annually."
+          },
+          "answer": "a",
+          "tag": "SENTENCE_INSERT",
+          "ja_choices": {
+            "a": "入館カードは一時的に無効になる場合があります。",
+            "b": "食堂では毎週金曜に季節のデザートを提供しています。",
+            "c": "従業員は休日に机を飾ることができます。",
+            "d": "当社は毎年地域のボランティア活動に参加しています。"
+          }
+        }
+      ],
+      "ja": "本社は来月改装されます。作業は[1]に開始し、3週間続きます。この期間中、午後6時以降はロビーへの立ち入りを[2]してください。保守担当は毎日進捗を[3]し、変更点をイントラネットに[4]します。"
+    }
+  ]
+}
